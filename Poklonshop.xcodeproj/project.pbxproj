@@ -7,12 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		14F17F273748C22B9832A3E4 /* Pods_Poklonshop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25067F20CC09FF5D97CAF825 /* Pods_Poklonshop.framework */; };
 		242FBD4C292B650300AAC83C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242FBD4B292B650300AAC83C /* AppDelegate.swift */; };
 		242FBD4E292B650300AAC83C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242FBD4D292B650300AAC83C /* SceneDelegate.swift */; };
 		242FBD50292B650300AAC83C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242FBD4F292B650300AAC83C /* ViewController.swift */; };
-		242FBD53292B650300AAC83C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 242FBD51292B650300AAC83C /* Main.storyboard */; };
+		242FBD53292B650300AAC83C /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 242FBD51292B650300AAC83C /* Home.storyboard */; };
 		242FBD55292B650400AAC83C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 242FBD54292B650400AAC83C /* Assets.xcassets */; };
 		242FBD58292B650400AAC83C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 242FBD56292B650400AAC83C /* LaunchScreen.storyboard */; };
+		24BF5A66292B6B9200EB27E3 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BF5A65292B6B9200EB27E3 /* TabBarViewController.swift */; };
+		24BF5A68292B6C6B00EB27E3 /* Draft.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24BF5A67292B6C6B00EB27E3 /* Draft.storyboard */; };
+		24BF5A6A292B6C7400EB27E3 /* Cart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24BF5A69292B6C7400EB27E3 /* Cart.storyboard */; };
+		24BF5A6C292B6C7D00EB27E3 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24BF5A6B292B6C7D00EB27E3 /* Profile.storyboard */; };
+		24BF5A71292B700800EB27E3 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BF5A70292B700800EB27E3 /* ProfileViewController.swift */; };
+		24BF5A73292B701600EB27E3 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BF5A72292B701600EB27E3 /* CartViewController.swift */; };
+		24BF5A75292B702200EB27E3 /* DraftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BF5A74292B702200EB27E3 /* DraftViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,10 +28,20 @@
 		242FBD4B292B650300AAC83C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		242FBD4D292B650300AAC83C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		242FBD4F292B650300AAC83C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		242FBD52292B650300AAC83C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		242FBD52292B650300AAC83C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
 		242FBD54292B650400AAC83C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		242FBD57292B650400AAC83C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		242FBD59292B650400AAC83C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		24BF5A65292B6B9200EB27E3 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		24BF5A67292B6C6B00EB27E3 /* Draft.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Draft.storyboard; sourceTree = "<group>"; };
+		24BF5A69292B6C7400EB27E3 /* Cart.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Cart.storyboard; sourceTree = "<group>"; };
+		24BF5A6B292B6C7D00EB27E3 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		24BF5A70292B700800EB27E3 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		24BF5A72292B701600EB27E3 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
+		24BF5A74292B702200EB27E3 /* DraftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraftViewController.swift; sourceTree = "<group>"; };
+		25067F20CC09FF5D97CAF825 /* Pods_Poklonshop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Poklonshop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7FC27242F13388A58704228F /* Pods-Poklonshop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Poklonshop.debug.xcconfig"; path = "Target Support Files/Pods-Poklonshop/Pods-Poklonshop.debug.xcconfig"; sourceTree = "<group>"; };
+		924BC0047EBDA89B507E3B4A /* Pods-Poklonshop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Poklonshop.release.xcconfig"; path = "Target Support Files/Pods-Poklonshop/Pods-Poklonshop.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +49,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14F17F273748C22B9832A3E4 /* Pods_Poklonshop.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		06095DBD1AEA5B969435FADF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				25067F20CC09FF5D97CAF825 /* Pods_Poklonshop.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		23951DF5D45322320CA3B426 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7FC27242F13388A58704228F /* Pods-Poklonshop.debug.xcconfig */,
+				924BC0047EBDA89B507E3B4A /* Pods-Poklonshop.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		242FBD3F292B650300AAC83C = {
 			isa = PBXGroup;
 			children = (
 				242FBD4A292B650300AAC83C /* Poklonshop */,
 				242FBD49292B650300AAC83C /* Products */,
+				23951DF5D45322320CA3B426 /* Pods */,
+				06095DBD1AEA5B969435FADF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +94,78 @@
 		242FBD4A292B650300AAC83C /* Poklonshop */ = {
 			isa = PBXGroup;
 			children = (
-				242FBD4B292B650300AAC83C /* AppDelegate.swift */,
-				242FBD4D292B650300AAC83C /* SceneDelegate.swift */,
-				242FBD4F292B650300AAC83C /* ViewController.swift */,
-				242FBD51292B650300AAC83C /* Main.storyboard */,
-				242FBD54292B650400AAC83C /* Assets.xcassets */,
-				242FBD56292B650400AAC83C /* LaunchScreen.storyboard */,
+				24BF5A6F292B6CC500EB27E3 /* ProfileMVP */,
+				24BF5A6E292B6CBE00EB27E3 /* CartMVP */,
+				24BF5A61292B68AD00EB27E3 /* AppDelegate */,
+				24BF5A5F292B687400EB27E3 /* Assets */,
+				24BF5A60292B688A00EB27E3 /* Storyboards */,
+				24BF5A62292B68BB00EB27E3 /* HomeMVP */,
+				24BF5A6D292B6C9000EB27E3 /* DraftMVP */,
 				242FBD59292B650400AAC83C /* Info.plist */,
 			);
 			path = Poklonshop;
+			sourceTree = "<group>";
+		};
+		24BF5A5F292B687400EB27E3 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				242FBD54292B650400AAC83C /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		24BF5A60292B688A00EB27E3 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				242FBD51292B650300AAC83C /* Home.storyboard */,
+				24BF5A67292B6C6B00EB27E3 /* Draft.storyboard */,
+				24BF5A69292B6C7400EB27E3 /* Cart.storyboard */,
+				24BF5A6B292B6C7D00EB27E3 /* Profile.storyboard */,
+				242FBD56292B650400AAC83C /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		24BF5A61292B68AD00EB27E3 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				242FBD4D292B650300AAC83C /* SceneDelegate.swift */,
+				242FBD4B292B650300AAC83C /* AppDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		24BF5A62292B68BB00EB27E3 /* HomeMVP */ = {
+			isa = PBXGroup;
+			children = (
+				242FBD4F292B650300AAC83C /* ViewController.swift */,
+				24BF5A65292B6B9200EB27E3 /* TabBarViewController.swift */,
+			);
+			path = HomeMVP;
+			sourceTree = "<group>";
+		};
+		24BF5A6D292B6C9000EB27E3 /* DraftMVP */ = {
+			isa = PBXGroup;
+			children = (
+				24BF5A74292B702200EB27E3 /* DraftViewController.swift */,
+			);
+			path = DraftMVP;
+			sourceTree = "<group>";
+		};
+		24BF5A6E292B6CBE00EB27E3 /* CartMVP */ = {
+			isa = PBXGroup;
+			children = (
+				24BF5A72292B701600EB27E3 /* CartViewController.swift */,
+			);
+			path = CartMVP;
+			sourceTree = "<group>";
+		};
+		24BF5A6F292B6CC500EB27E3 /* ProfileMVP */ = {
+			isa = PBXGroup;
+			children = (
+				24BF5A70292B700800EB27E3 /* ProfileViewController.swift */,
+			);
+			path = ProfileMVP;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +175,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 242FBD5C292B650400AAC83C /* Build configuration list for PBXNativeTarget "Poklonshop" */;
 			buildPhases = (
+				7997D0360A5AC198B6FEF0FA /* [CP] Check Pods Manifest.lock */,
 				242FBD44292B650300AAC83C /* Sources */,
 				242FBD45292B650300AAC83C /* Frameworks */,
 				242FBD46292B650300AAC83C /* Resources */,
+				B778DEA713F473070294B16D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -125,21 +228,70 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24BF5A6C292B6C7D00EB27E3 /* Profile.storyboard in Resources */,
+				24BF5A68292B6C6B00EB27E3 /* Draft.storyboard in Resources */,
 				242FBD58292B650400AAC83C /* LaunchScreen.storyboard in Resources */,
 				242FBD55292B650400AAC83C /* Assets.xcassets in Resources */,
-				242FBD53292B650300AAC83C /* Main.storyboard in Resources */,
+				24BF5A6A292B6C7400EB27E3 /* Cart.storyboard in Resources */,
+				242FBD53292B650300AAC83C /* Home.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7997D0360A5AC198B6FEF0FA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Poklonshop-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B778DEA713F473070294B16D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Poklonshop/Pods-Poklonshop-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Poklonshop/Pods-Poklonshop-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Poklonshop/Pods-Poklonshop-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		242FBD44292B650300AAC83C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24BF5A66292B6B9200EB27E3 /* TabBarViewController.swift in Sources */,
 				242FBD50292B650300AAC83C /* ViewController.swift in Sources */,
+				24BF5A71292B700800EB27E3 /* ProfileViewController.swift in Sources */,
 				242FBD4C292B650300AAC83C /* AppDelegate.swift in Sources */,
+				24BF5A75292B702200EB27E3 /* DraftViewController.swift in Sources */,
+				24BF5A73292B701600EB27E3 /* CartViewController.swift in Sources */,
 				242FBD4E292B650300AAC83C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -147,12 +299,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		242FBD51292B650300AAC83C /* Main.storyboard */ = {
+		242FBD51292B650300AAC83C /* Home.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				242FBD52292B650300AAC83C /* Base */,
 			);
-			name = Main.storyboard;
+			name = Home.storyboard;
 			sourceTree = "<group>";
 		};
 		242FBD56292B650400AAC83C /* LaunchScreen.storyboard */ = {
@@ -282,6 +434,7 @@
 		};
 		242FBD5D292B650400AAC83C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7FC27242F13388A58704228F /* Pods-Poklonshop.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -292,7 +445,7 @@
 				INFOPLIST_FILE = Poklonshop/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -310,6 +463,7 @@
 		};
 		242FBD5E292B650400AAC83C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 924BC0047EBDA89B507E3B4A /* Pods-Poklonshop.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -320,7 +474,7 @@
 				INFOPLIST_FILE = Poklonshop/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
