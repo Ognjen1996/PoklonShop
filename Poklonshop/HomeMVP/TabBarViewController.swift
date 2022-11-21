@@ -11,18 +11,16 @@ class TabBarViewController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        UITabBar.appearance().barTintColor = .black
         tabBar.tintColor = .systemPink
         tabBar.backgroundColor = .white
         
         configureTabBar()
-        // Do any additional setup after loading the view.
     }
     
     
     private func configureTabBar() {
         let storyboardHome = UIStoryboard.init(name: "Home", bundle: nil)
-        guard let vc = storyboardHome.instantiateViewController(withIdentifier: "ViewController" ) as? ViewController else {return}
+        guard let vc = storyboardHome.instantiateViewController(withIdentifier: "HomeViewController" ) as? HomeViewController else {return}
         vc.tabBarItem = UITabBarItem(title: "Home", image: UIImage(named: "homeIcon"), selectedImage: UIImage(named: "homeIcon"))
         
         let storyboardDraft = UIStoryboard.init(name: "Draft", bundle: nil)
