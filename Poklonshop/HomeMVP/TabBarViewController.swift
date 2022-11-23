@@ -21,6 +21,7 @@ class TabBarViewController: UITabBarController {
     private func configureTabBar() {
         let storyboardHome = UIStoryboard.init(name: "Home", bundle: nil)
         guard let vc = storyboardHome.instantiateViewController(withIdentifier: "HomeViewController" ) as? HomeViewController else {return}
+        vc.presenter = HomePresenter()
         vc.tabBarItem = UITabBarItem(title: "Home", image: UIImage(named: "homeIcon"), selectedImage: UIImage(named: "homeIcon"))
         
         let storyboardDraft = UIStoryboard.init(name: "Draft", bundle: nil)
