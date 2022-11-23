@@ -293,7 +293,7 @@
                                         <rect key="frame" x="8" y="467" width="374" height="280"/>
                                         <subviews>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="zQE-Sq-0Ea">
-                                                <rect key="frame" x="0.0" y="0.0" width="374" height="280"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="208"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="tZh-dh-znv">
                                                     <size key="itemSize" width="128" height="128"/>
@@ -326,13 +326,24 @@
                                                     </collectionViewCell>
                                                 </cells>
                                             </collectionView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wmz-yb-Wok">
+                                                <rect key="frame" x="32" y="213" width="310" height="35"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Add to Cart"/>
+                                                <connections>
+                                                    <action selector="showCart" destination="CXx-Mj-1sT" eventType="touchUpInside" id="u5k-lK-ZGQ"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="zQE-Sq-0Ea" firstAttribute="top" secondItem="JCP-eB-kt4" secondAttribute="top" id="1db-cJ-i4E"/>
                                             <constraint firstAttribute="trailing" secondItem="zQE-Sq-0Ea" secondAttribute="trailing" id="Gx0-TH-Q46"/>
                                             <constraint firstItem="zQE-Sq-0Ea" firstAttribute="leading" secondItem="JCP-eB-kt4" secondAttribute="leading" id="NOh-Gn-JZw"/>
-                                            <constraint firstAttribute="bottom" secondItem="zQE-Sq-0Ea" secondAttribute="bottom" id="TmV-6L-oOe"/>
+                                            <constraint firstAttribute="bottom" secondItem="wmz-yb-Wok" secondAttribute="bottom" constant="32" id="O6U-JP-0pK"/>
+                                            <constraint firstItem="wmz-yb-Wok" firstAttribute="leading" secondItem="JCP-eB-kt4" secondAttribute="leading" constant="32" id="hd1-8A-Lf5"/>
+                                            <constraint firstItem="wmz-yb-Wok" firstAttribute="top" secondItem="zQE-Sq-0Ea" secondAttribute="bottom" constant="5" id="oOb-Ou-ebf"/>
+                                            <constraint firstAttribute="trailing" secondItem="wmz-yb-Wok" secondAttribute="trailing" constant="32" id="sYO-be-4gI"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gOw-ZA-XVw">
@@ -387,7 +398,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vdY-YO-syE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3322" y="-2"/>
+            <point key="canvasLocation" x="3321.5384615384614" y="-2.1327014218009479"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dL6-o4-ism">
