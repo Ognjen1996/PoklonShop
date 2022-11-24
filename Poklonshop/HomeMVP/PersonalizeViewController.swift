@@ -9,7 +9,7 @@ import UIKit
 import Kingfisher
 
 protocol PersonalizeViewControllerDelegate: AnyObject {
-    func personalizeData(_ presenter: PersonalizeViewController, data: String)
+    func personalizeData(_ presenter: PersonalizeViewController, data: [String])
 }
 
 class PersonalizeViewController: UIViewController {
@@ -17,10 +17,11 @@ class PersonalizeViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var logoImage: UIImageView!
     
-    weak var delegate: PersonalizeViewControllerDelegate?
+    var delegate: PersonalizeViewControllerDelegate?
     
     let logos: [String] = ["dogmaLogo", "dockerLogo", "lavLogo", "jelenLogo", "hopLogo", "metroLogo", "dogmaLogo2", "samoLogo", "zbirLogo", "saltoLogo", "whiteStoneLogo"]
     var selected: String?
+    var cartItems: [String]? = []
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -31,20 +32,24 @@ class PersonalizeViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    @IBAction private func showCart() {
-        let storyboard = UIStoryboard(name: "Cart", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "CartViewController") as! CartViewController
-        vc.selectedLogo = selected ?? ""
-        self.present(vc, animated: true)
+    @IBAction func showCart() {
+//        let storyboard = UIStoryboard(name: "Cart", bundle: nil)
+//        let vc = storyboard.instantiateViewController(withIdentifier: "CartViewController") as! CartViewController
+        guard let cartItems = cartItems else {return}
+        self.delegate?.personalizeData(self, data: cartItems)
+        let alert = UIAlertController(title: "Added to cart", message: "Item added to cart", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default))
+        self.present(alert, animated: true, completion: nil)
+//        vc.cartItems?.append(selected ?? "")
+//        self.present(vc, animated: true)
     }
 }
 
 extension PersonalizeViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let selectedLogo = logos[indexPath.row]
-        self.selected = selectedLogo
+        self.cartItems?.append(selectedLogo)
         logoImage.image = UIImage(named: selectedLogo)
-        self.delegate?.personalizeData(self, data: selectedLogo)
     }
 }
 extension PersonalizeViewController: UICollectionViewDataSource {

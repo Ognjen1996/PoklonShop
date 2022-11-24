@@ -21,7 +21,7 @@ class DetailsViewController: UIViewController {
         let storyboard = UIStoryboard(name: "Home", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "PersonalizeViewController") as! PersonalizeViewController
 //        vc.selectedCategory = category[indexPath.row]
-        self.present(vc, animated: true)
+        show(vc, sender: self)
     }
 
 }

@@ -10,10 +10,16 @@ import UIKit
 class HomeViewController: UIViewController {
     
     @IBOutlet var tableView: UITableView!
+    @IBOutlet var collectionView: UICollectionView!
     var presenter: HomePresenter?
     var categoryData: [CategoryData]? = [] {
         didSet {
             tableView.reloadData()
+        }
+    }
+    var bannerData: [BannerData]? = [] {
+        didSet {
+            collectionView.reloadData()
         }
     }
 
@@ -21,9 +27,16 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         presenter?.delegate = self
         presenter?.fetchData()
+        presenter?.fetchBanners()
         tableView.delegate = self
         tableView.dataSource = self
+        collectionView.dataSource = self
+        let layout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize(width: 320, height: 120)
+        layout.scrollDirection = .horizontal
+        collectionView.collectionViewLayout = layout
         tableView.rowHeight = 300
+        
         
         // Do any additional setup after loading the view.
     }
@@ -59,7 +72,25 @@ extension HomeViewController: HomePresenterDelegate {
     func homePresenter(_ presenter: HomePresenter, with data: [CategoryData]) {
         self.categoryData = data
     }
-    
-    
+    func bannerPresenter(_ presenter: HomePresenter, with bannerData: [BannerData]) {
+        self.bannerData = bannerData
+    }
 }
-
+extension HomeViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        bannerData?.count ?? 3
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell: HomeCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCollectionViewCell", for: indexPath) as! HomeCollectionViewCell
+        guard let banner = bannerData else {return cell}
+        cell.setupImage(with: banner[indexPath.row])
+        return cell
+    }
+}
+extension HomeViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let collectionViewFrame = collectionView.frame
+        return CGSize(width: collectionViewFrame.size.width, height: collectionViewFrame.height)
+    }
+}
