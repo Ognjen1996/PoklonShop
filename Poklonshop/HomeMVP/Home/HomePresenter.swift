@@ -12,7 +12,7 @@ class HomePresenter {
     weak var delegate: HomePresenterDelegate?
  
     func fetchData() {
-        let baseURL = "http://51.195.118.214:8888/category?limit=100000&offset=0&orderBy=id&orderDirection=asc"
+        let baseURL = "http://51.195.118.214:8888/category/"
         guard let url = URL(string: baseURL) else {return}
         var request = URLRequest(url: url)
         
