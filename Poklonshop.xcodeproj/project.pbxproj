@@ -35,6 +35,7 @@
 		24BF5A7B292B92F700EB27E3 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BF5A7A292B92F700EB27E3 /* CategoryCollectionViewCell.swift */; };
 		24BF5A7D292BAD4A00EB27E3 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BF5A7C292BAD4A00EB27E3 /* HomePresenter.swift */; };
 		24BF5A80292BB00900EB27E3 /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BF5A7F292BB00900EB27E3 /* CategoryModel.swift */; };
+		24FC5187293627E00047134A /* ProductInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FC5186293627E00047134A /* ProductInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +68,7 @@
 		24BF5A7A292B92F700EB27E3 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		24BF5A7C292BAD4A00EB27E3 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		24BF5A7F292BB00900EB27E3 /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
+		24FC5186293627E00047134A /* ProductInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInfo.swift; sourceTree = "<group>"; };
 		25067F20CC09FF5D97CAF825 /* Pods_Poklonshop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Poklonshop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FC27242F13388A58704228F /* Pods-Poklonshop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Poklonshop.debug.xcconfig"; path = "Target Support Files/Pods-Poklonshop/Pods-Poklonshop.debug.xcconfig"; sourceTree = "<group>"; };
 		924BC0047EBDA89B507E3B4A /* Pods-Poklonshop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Poklonshop.release.xcconfig"; path = "Target Support Files/Pods-Poklonshop/Pods-Poklonshop.release.xcconfig"; sourceTree = "<group>"; };
@@ -230,6 +232,7 @@
 				24BF5A7F292BB00900EB27E3 /* CategoryModel.swift */,
 				2441D9312930B1D100F8448C /* SubCategoryModel.swift */,
 				24A51A59292F8DF800CB33C0 /* BannerModel.swift */,
+				24FC5186293627E00047134A /* ProductInfo.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -373,6 +376,7 @@
 				24BF5A7D292BAD4A00EB27E3 /* HomePresenter.swift in Sources */,
 				242BA86D292E4EEC001FBDBC /* CartTableViewCell.swift in Sources */,
 				2441D9392930DD9F00F8448C /* ProductPresenter.swift in Sources */,
+				24FC5187293627E00047134A /* ProductInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

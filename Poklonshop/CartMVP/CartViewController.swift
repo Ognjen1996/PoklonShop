@@ -6,24 +6,44 @@
 //
 
 import UIKit
+import Kingfisher
 
 class CartViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var totalPrice: UILabel!
 
-    
-    var presenter: PersonalizeViewController?
     var selectedLogo: String?
-    var cartItems: [String]?
+    var cartItems: [ProductInfo]! = [] {
+        didSet{
+            tableView.reloadData()
+        }
+    }
+    override func awakeFromNib() {
 
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        calculatePrice()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        presenter?.delegate = self
+        NotificationCenter.default.addObserver(self, selector: #selector(notificationRecieved(_:)), name: Notification.Name("newItem"), object: nil)
+        calculatePrice()
         tableView.delegate = self
         tableView.dataSource = self
-        presenter?.showCart()
         // Do any additional setup after loading the view.
+    }
+    
+    @objc func notificationRecieved(_ notif: Notification) {
+        guard let logo = notif.userInfo?["logo"] as? String,
+              let image = notif.userInfo?["image"] as? String,
+              let price = notif.userInfo?["price"] as? String,
+              let name = notif.userInfo?["name"] as? String
+        else {return}
+        
+        let product = ProductInfo(image: image, logo: logo, price: Int(price)!, name: name)
+        cartItems?.append(product)
     }
     
 }
@@ -34,21 +54,27 @@ extension CartViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: CartTableViewCell = tableView.dequeueReusableCell(withIdentifier: "CartTableViewCell") as! CartTableViewCell
-        guard let selectedLogo = selectedLogo else {return cell}
             tableView.isHidden = false
-            cell.productLabel.text = "Pivska čaša sa " + selectedLogo
-            cell.logoImage.image = UIImage(named: selectedLogo)
-            cell.priceLabel.text = "1600 RSD"
-
+        cell.productLabel.text = cartItems[indexPath.row].name
+        cell.logoImage.image = UIImage(named: cartItems[indexPath.row].logo)
+        cell.priceLabel.text = String(cartItems[indexPath.row].price) + " RSD"
+        guard let url = URL(string: cartItems[indexPath.row].image) else { return cell}
+        cell.productImage.kf.setImage(with: url)
+        
         return cell
     }
 }
+
 extension CartViewController: UITableViewDelegate {
     
 }
-extension CartViewController: PersonalizeViewControllerDelegate {
-    func personalizeData(_ presenter: PersonalizeViewController, data: String) {
-        self.cartItems?.append(data)
-        tableView.reloadData()
+private extension CartViewController {
+    func calculatePrice() {
+        var total: Int = 0
+        for product in cartItems {
+            total = product.price + total
+        }
+        totalPrice.text =  "Ukupno: " + String(total) + " RSD"
+        
     }
 }

@@ -12,7 +12,10 @@ class CartTableViewCell: UITableViewCell {
     @IBOutlet weak var productLabel: UILabel!
     @IBOutlet weak var logoImage: UIImageView!
     @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var productImage: UIImageView!
+    
 
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         selectionStyle = .none

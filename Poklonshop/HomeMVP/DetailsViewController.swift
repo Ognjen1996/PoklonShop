@@ -37,7 +37,12 @@ class DetailsViewController: UIViewController {
                 commentLabel.text = product.description
             }
             titleLabel.text = product.title
-            priceLabel.text = product.price
+            if let price = product.prices {
+                priceLabel.text = String(price[0].value) + " " + price[0].currency
+            }
+            else {
+                priceLabel.text = "Nema na stanju"
+            }
             
         }
 
@@ -46,6 +51,7 @@ class DetailsViewController: UIViewController {
         let storyboard = UIStoryboard(name: "Home", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "PersonalizeViewController") as! PersonalizeViewController
         vc.product = product
+        vc.image = product?.images[0]
         show(vc, sender: self)
     }
 
