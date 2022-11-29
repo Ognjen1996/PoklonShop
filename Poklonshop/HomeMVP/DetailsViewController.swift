@@ -13,6 +13,8 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var logoImage: UIImageView!
     @IBOutlet weak var productImage: UIImageView!
     @IBOutlet weak var commentLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
     
     
     var product: ProductData?
@@ -34,6 +36,8 @@ class DetailsViewController: UIViewController {
             else {
                 commentLabel.text = product.description
             }
+            titleLabel.text = product.title
+            priceLabel.text = product.price
             
         }
 
