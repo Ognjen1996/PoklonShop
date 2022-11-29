@@ -61,11 +61,16 @@ extension CartViewController: UITableViewDataSource {
         guard let url = URL(string: cartItems[indexPath.row].image) else { return cell}
         cell.productImage.kf.setImage(with: url)
         
+        cell.removeButton.tag = indexPath.row
+        cell.removeButton.addTarget(self, action: #selector(removeProduct(_:)), for: .touchUpInside)
+        
         return cell
     }
 }
 
 extension CartViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    }
     
 }
 private extension CartViewController {
@@ -76,4 +81,8 @@ private extension CartViewController {
             }
             totalPrice.text =  "Ukupno: " + String(total) + " RSD"
         }
+    @objc func removeProduct(_ sender: UIButton) {
+        cartItems.remove(at: sender.tag)
+        calculatePrice()
+    }
 }

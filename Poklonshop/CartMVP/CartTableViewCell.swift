@@ -13,6 +13,7 @@ class CartTableViewCell: UITableViewCell {
     @IBOutlet weak var logoImage: UIImageView!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var productImage: UIImageView!
+    @IBOutlet weak var removeButton: UIButton!
     
 
     
