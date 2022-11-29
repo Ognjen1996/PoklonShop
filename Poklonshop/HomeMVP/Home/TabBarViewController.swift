@@ -30,7 +30,7 @@ class TabBarViewController: UITabBarController {
         
         let storyboardCart = UIStoryboard.init(name: "Cart", bundle: nil)
         guard let vcCart = storyboardCart.instantiateViewController(withIdentifier: "CartViewController" ) as? CartViewController else {return}
-        
+        vcCart.setObserver()
         vcCart.tabBarItem = UITabBarItem(title: "Cart", image: UIImage(named: "cartIcon"), selectedImage: UIImage(named: "cartIcon"))
         
         let storyboardProfile = UIStoryboard.init(name: "Profile", bundle: nil)

@@ -16,11 +16,10 @@ class CartViewController: UIViewController {
     var selectedLogo: String?
     var cartItems: [ProductInfo]! = [] {
         didSet{
-            tableView.reloadData()
+            if let tableView = tableView {
+                tableView.reloadData()
+            }
         }
-    }
-    override func awakeFromNib() {
-
     }
     override func viewWillAppear(_ animated: Bool) {
         calculatePrice()
@@ -28,11 +27,12 @@ class CartViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        NotificationCenter.default.addObserver(self, selector: #selector(notificationRecieved(_:)), name: Notification.Name("newItem"), object: nil)
-        calculatePrice()
         tableView.delegate = self
         tableView.dataSource = self
         // Do any additional setup after loading the view.
+    }
+    func setObserver() {
+        NotificationCenter.default.addObserver(self, selector: #selector(notificationRecieved(_:)), name: Notification.Name("newItem"), object: nil)
     }
     
     @objc func notificationRecieved(_ notif: Notification) {
@@ -70,11 +70,10 @@ extension CartViewController: UITableViewDelegate {
 }
 private extension CartViewController {
     func calculatePrice() {
-        var total: Int = 0
-        for product in cartItems {
-            total = product.price + total
+            var total: Int = 0
+            for product in cartItems {
+                total = product.price + total
+            }
+            totalPrice.text =  "Ukupno: " + String(total) + " RSD"
         }
-        totalPrice.text =  "Ukupno: " + String(total) + " RSD"
-        
-    }
 }
