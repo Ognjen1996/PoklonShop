@@ -43,8 +43,9 @@ extension ProductsViewController: UICollectionViewDataSource {
         let cell: CategoryCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCollectionViewCell", for: indexPath) as! CategoryCollectionViewCell
         guard let products = products else {return cell}
         let product = products[indexPath.row]
+        let img = product.images[0]
         cell.label.text = product.title
-        guard let url = URL(string: product.images[0]) else {return cell}
+        let url = URL(string: img)
         cell.imageView.kf.setImage(with: url)
         return cell
     }

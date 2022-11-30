@@ -52,9 +52,15 @@ extension CategoryViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: CategoryCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCollectionViewCell", for: indexPath) as! CategoryCollectionViewCell
         cell.label.text = selectedCategory?.subcategories[indexPath.row].name
-        guard let url = selectedCategory?.subcategories[indexPath.row].image else {return cell}
-        guard let realURL = URL(string: url) else {return cell}
-        cell.imageView.kf.setImage(with: realURL)
+        if selectedCategory?.subcategories[indexPath.row].image == "" || selectedCategory?.subcategories[indexPath.row].image == nil {
+            guard let url = URL(string: "https://asset2.cxnmarksandspencer.com/is/image/mands/SB-31242_2_Wow-wow-Christmas-Gifts-1858X1858?wid=950&qlt=70&fmt=pjpeg") else {return cell}
+            cell.imageView.kf.setImage(with: url)
+        }
+        else {
+            guard let url = selectedCategory?.subcategories[indexPath.row].image else {return cell}
+            guard let realURL = URL(string: url) else {return cell}
+            cell.imageView.kf.setImage(with: realURL)
+        }
         return cell
     }
     
@@ -63,7 +69,7 @@ extension CategoryViewController: UICollectionViewDataSource {
 extension CategoryViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let collectionViewFrame = collectionView.frame
-        return CGSize(width: collectionViewFrame.size.width, height: collectionViewFrame.height / 2)
+        return CGSize(width: collectionViewFrame.size.width, height: collectionViewFrame.height / 3)
         
     }
 }
