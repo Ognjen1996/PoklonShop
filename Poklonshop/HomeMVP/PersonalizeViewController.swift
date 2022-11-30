@@ -7,6 +7,7 @@
 
 import UIKit
 import Kingfisher
+import DragDropUI
 
 
 class PersonalizeViewController: UIViewController {
@@ -14,6 +15,8 @@ class PersonalizeViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var logoImage: UIImageView!
     @IBOutlet weak var productImage: UIImageView!
+    @IBOutlet weak var dragableView: DDImageView!
+
     
     var product: ProductData?
     var image: String?
@@ -25,7 +28,7 @@ class PersonalizeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        dragableView.ddDelegate = self
         collectionView.delegate = self
         collectionView.dataSource = self
         let layout = UICollectionViewFlowLayout()
@@ -78,4 +81,15 @@ extension PersonalizeViewController: UICollectionViewDelegateFlowLayout {
         let collectionViewFrame = collectionView.frame
         return CGSize(width: collectionViewFrame.size.width/4, height: collectionViewFrame.height / 2)
     }
+}
+extension PersonalizeViewController: DDViewDelegate {
+    func viewWasDragged(view: UIView, draggedPoint: CGPoint) {
+        
+    }
+    
+    func viewWasDropped(view: UIView, droppedPoint: CGPoint) {
+        
+    }
+    
+    
 }
