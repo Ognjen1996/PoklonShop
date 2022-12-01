@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Zfo-MQ-MgH">
-                                <rect key="frame" x="0.0" y="47" width="390" height="630"/>
+                                <rect key="frame" x="0.0" y="47" width="390" height="610"/>
                                 <color key="backgroundColor" red="0.9360449314" green="0.88662333459999998" blue="0.89276814869999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CartTableViewCell" rowHeight="136" id="9Vd-5j-Ihi" customClass="CartTableViewCell" customModule="Poklonshop" customModuleProvider="target">
@@ -75,7 +75,7 @@
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="40" id="al9-MP-CnH"/>
                                                                     </constraints>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
@@ -129,26 +129,36 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bxs-eb-eLR">
-                                <rect key="frame" x="16" y="727" width="358" height="23"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bxs-eb-eLR">
+                                <rect key="frame" x="16" y="757" width="358" height="23"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Promo Code" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XRr-rL-RIw">
+                                <rect key="frame" x="0.0" y="689" width="390" height="34"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" red="0.9360449314" green="0.88662333459999998" blue="0.89276814869999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
+                            <constraint firstItem="XRr-rL-RIw" firstAttribute="top" secondItem="Zfo-MQ-MgH" secondAttribute="bottom" constant="32" id="0KF-i3-LHi"/>
+                            <constraint firstItem="XRr-rL-RIw" firstAttribute="trailing" secondItem="Zfo-MQ-MgH" secondAttribute="trailing" id="0wl-un-4L7"/>
+                            <constraint firstItem="XRr-rL-RIw" firstAttribute="leading" secondItem="Zfo-MQ-MgH" secondAttribute="leading" id="Bqf-eo-Fii"/>
                             <constraint firstItem="Zfo-MQ-MgH" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Djg-UL-Z3I"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Bxs-eb-eLR" secondAttribute="trailing" constant="16" id="UUL-i5-ms9"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Bxs-eb-eLR" secondAttribute="bottom" constant="60" id="Vvr-YQ-6xq"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Bxs-eb-eLR" secondAttribute="bottom" constant="30" id="Vvr-YQ-6xq"/>
                             <constraint firstItem="Zfo-MQ-MgH" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="YcC-kG-rVS"/>
                             <constraint firstItem="Bxs-eb-eLR" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="gYH-lq-lFe"/>
-                            <constraint firstItem="Bxs-eb-eLR" firstAttribute="top" secondItem="Zfo-MQ-MgH" secondAttribute="bottom" constant="50" id="o0y-eC-1om"/>
+                            <constraint firstItem="Bxs-eb-eLR" firstAttribute="top" secondItem="XRr-rL-RIw" secondAttribute="bottom" constant="34" id="kp2-pb-ncV"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Zfo-MQ-MgH" secondAttribute="trailing" id="zYK-pk-C5G"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="promoTextField" destination="XRr-rL-RIw" id="Dp4-N6-omA"/>
                         <outlet property="tableView" destination="Zfo-MQ-MgH" id="scm-PB-LYl"/>
                         <outlet property="totalPrice" destination="Bxs-eb-eLR" id="F82-FS-VW5"/>
                     </connections>

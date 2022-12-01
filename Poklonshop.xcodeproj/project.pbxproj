@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		14F17F273748C22B9832A3E4 /* Pods_Poklonshop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25067F20CC09FF5D97CAF825 /* Pods_Poklonshop.framework */; };
+		2413E4B82938AD68009F4EB7 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2413E4B72938AD68009F4EB7 /* ProfileTableViewCell.swift */; };
+		2413E4BA2938AFAB009F4EB7 /* ProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2413E4B92938AFAB009F4EB7 /* ProfileCollectionViewCell.swift */; };
 		242BA86B292E338E001FBDBC /* PersonalizeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242BA86A292E338E001FBDBC /* PersonalizeCollectionViewCell.swift */; };
 		242BA86D292E4EEC001FBDBC /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242BA86C292E4EEC001FBDBC /* CartTableViewCell.swift */; };
 		242FBD4C292B650300AAC83C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242FBD4B292B650300AAC83C /* AppDelegate.swift */; };
@@ -39,6 +41,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2413E4B72938AD68009F4EB7 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
+		2413E4B92938AFAB009F4EB7 /* ProfileCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCollectionViewCell.swift; sourceTree = "<group>"; };
 		242BA86A292E338E001FBDBC /* PersonalizeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalizeCollectionViewCell.swift; sourceTree = "<group>"; };
 		242BA86C292E4EEC001FBDBC /* CartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTableViewCell.swift; sourceTree = "<group>"; };
 		242FBD48292B650300AAC83C /* Poklonshop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Poklonshop.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -101,6 +105,16 @@
 				924BC0047EBDA89B507E3B4A /* Pods-Poklonshop.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		2413E4B62938AB4B009F4EB7 /* Personalize */ = {
+			isa = PBXGroup;
+			children = (
+				248C320B292CF623002DA428 /* DetailsViewController.swift */,
+				248C320D292D089F002DA428 /* PersonalizeViewController.swift */,
+				242BA86A292E338E001FBDBC /* PersonalizeCollectionViewCell.swift */,
+			);
+			path = Personalize;
 			sourceTree = "<group>";
 		};
 		242FBD3F292B650300AAC83C = {
@@ -194,9 +208,7 @@
 			children = (
 				2441D9332930D8D200F8448C /* Home */,
 				2441D9342930D8E200F8448C /* Category */,
-				248C320B292CF623002DA428 /* DetailsViewController.swift */,
-				248C320D292D089F002DA428 /* PersonalizeViewController.swift */,
-				242BA86A292E338E001FBDBC /* PersonalizeCollectionViewCell.swift */,
+				2413E4B62938AB4B009F4EB7 /* Personalize */,
 			);
 			path = HomeMVP;
 			sourceTree = "<group>";
@@ -222,6 +234,8 @@
 			isa = PBXGroup;
 			children = (
 				24BF5A70292B700800EB27E3 /* ProfileViewController.swift */,
+				2413E4B72938AD68009F4EB7 /* ProfileTableViewCell.swift */,
+				2413E4B92938AFAB009F4EB7 /* ProfileCollectionViewCell.swift */,
 			);
 			path = ProfileMVP;
 			sourceTree = "<group>";
@@ -357,6 +371,7 @@
 			files = (
 				24BF5A66292B6B9200EB27E3 /* TabBarViewController.swift in Sources */,
 				248C320E292D089F002DA428 /* PersonalizeViewController.swift in Sources */,
+				2413E4B82938AD68009F4EB7 /* ProfileTableViewCell.swift in Sources */,
 				24A51A58292F8CFF00CB33C0 /* HomeCollectionViewCell.swift in Sources */,
 				24A51A5A292F8DF800CB33C0 /* BannerModel.swift in Sources */,
 				24BF5A80292BB00900EB27E3 /* CategoryModel.swift in Sources */,
@@ -364,6 +379,7 @@
 				2441D9322930B1D100F8448C /* SubCategoryModel.swift in Sources */,
 				242FBD50292B650300AAC83C /* HomeViewController.swift in Sources */,
 				24BF5A71292B700800EB27E3 /* ProfileViewController.swift in Sources */,
+				2413E4BA2938AFAB009F4EB7 /* ProfileCollectionViewCell.swift in Sources */,
 				242FBD4C292B650300AAC83C /* AppDelegate.swift in Sources */,
 				24BF5A75292B702200EB27E3 /* DraftViewController.swift in Sources */,
 				24BF5A73292B701600EB27E3 /* CartViewController.swift in Sources */,

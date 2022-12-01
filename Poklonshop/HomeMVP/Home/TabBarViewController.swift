@@ -35,7 +35,7 @@ class TabBarViewController: UITabBarController {
         
         let storyboardProfile = UIStoryboard.init(name: "Profile", bundle: nil)
         guard let vcProfile = storyboardProfile.instantiateViewController(withIdentifier: "ProfileViewController" ) as? ProfileViewController else {return}
-        vcProfile.tabBarItem = UITabBarItem(title: "Profile", image: UIImage(named: "profileIcon"), selectedImage: UIImage(named: "profileIcon"))
+        vcProfile.tabBarItem = UITabBarItem(title: "Test Tab u Coll", image: UIImage(named: "profileIcon"), selectedImage: UIImage(named: "profileIcon"))
         
         let viewControllerList = [vc,  vcCart, vcProfile]
         viewControllers = viewControllerList.map {

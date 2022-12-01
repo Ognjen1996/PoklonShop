@@ -28,5 +28,15 @@ class CartTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    func setup(with data: ProductInfo) {
+        productLabel.text = data.name
+        logoImage.image = UIImage(named: data.logo)
+        priceLabel.text = String(data.price) + " RSD"
+        guard let url = URL(string: data.image) else { return }
+        productImage.kf.setImage(with: url)
+        
+        
+    }
 
 }

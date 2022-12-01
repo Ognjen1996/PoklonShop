@@ -6,6 +6,7 @@ class CartViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var totalPrice: UILabel!
+    @IBOutlet weak var promoTextField: UITextField!
 
     var selectedLogo: String?
     var cartItems: [ProductInfo]! = [] {
@@ -21,6 +22,7 @@ class CartViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        promoTextField.addTarget(self, action: #selector(promoCode(_:)), for: .editingChanged)
         tableView.delegate = self
         tableView.dataSource = self
         // Do any additional setup after loading the view.
@@ -49,11 +51,8 @@ extension CartViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: CartTableViewCell = tableView.dequeueReusableCell(withIdentifier: "CartTableViewCell") as! CartTableViewCell
             tableView.isHidden = false
-        cell.productLabel.text = cartItems[indexPath.row].name
-        cell.logoImage.image = UIImage(named: cartItems[indexPath.row].logo)
-        cell.priceLabel.text = String(cartItems[indexPath.row].price) + " RSD"
-        guard let url = URL(string: cartItems[indexPath.row].image) else { return cell}
-        cell.productImage.kf.setImage(with: url)
+        
+        cell.setup(with: cartItems[indexPath.row])
         
         cell.removeButton.tag = indexPath.row
         cell.removeButton.addTarget(self, action: #selector(removeProduct(_:)), for: .touchUpInside)
@@ -73,10 +72,37 @@ private extension CartViewController {
             for product in cartItems {
                 total = product.price + total
             }
-            totalPrice.text =  "Ukupno: " + String(total) + " RSD"
+            totalPrice.text =  "Ukupno: " + String(Double(total)) + " RSD \n+ 250 RSD dostava"
         }
     @objc func removeProduct(_ sender: UIButton) {
         cartItems.remove(at: sender.tag)
         calculatePrice()
+        promoTextField.text = ""
+    }
+    @objc func promoCode(_ textfield: UITextField) {
+        if textfield.text?.uppercased() == "POPUST20" {
+            var total: Int = 0
+            for product in cartItems {
+                total = product.price + total
+            }
+            let newPrice = Double(total) - (Double(total) * 0.2)
+            totalPrice.text = " 20 posto popusta uz kod! Ukupno: " + String(newPrice) + " RSD\n + 250 RSD dostava"
+        }
+        else if textfield.text?.uppercased() == "NAVERESIJU" {
+            var total: Int = 0
+            for product in cartItems {
+                total = product.price + total
+            }
+            let newPrice = "0"
+            totalPrice.text = "100 posto popusta uz kod! Ukupno: " + String(newPrice) + " RSD\n + 250 RSD dostava"
+        }
+        else {
+            var total: Int = 0
+            for product in cartItems {
+                total = product.price + total
+            }
+            let newPrice = Double(total)
+            totalPrice.text = "Ukupno: " + String(newPrice) + " RSD\n + 250 RSD dostava"
+        }
     }
 }

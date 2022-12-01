@@ -41,18 +41,32 @@ class PersonalizeViewController: UIViewController {
     }
     
     @IBAction func showCart() {
-        guard let selected = selected,
-              let price = product?.prices,
-              let image = image,
-              let name = product?.title
-        else {return}
-        let priceStr = String(price[0].value)
-        let userInfo = ["image" : image, "logo" : selected, "price" : priceStr, "name" : name ]
-        NotificationCenter.default.post(name: Notification.Name("newItem"), object: nil, userInfo: userInfo)
-        
-        let alert = UIAlertController(title: "Added to cart", message: "Item added to cart", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default))
-        self.present(alert, animated: true,completion: nil)
+        if let selected = selected {
+           guard let price = product?.prices,
+                let image = image,
+                let name = product?.title
+            else {return}
+            let priceStr = String(price[0].value)
+            let userInfo = ["image" : image, "logo" : selected, "price" : priceStr, "name" : name ]
+            NotificationCenter.default.post(name: Notification.Name("newItem"), object: nil, userInfo: userInfo)
+            
+            let alert = UIAlertController(title: "Added to cart", message: "Item added to cart", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default))
+            self.present(alert, animated: true,completion: nil)
+        }
+        else {
+            guard let price = product?.prices,
+                 let image = image,
+                 let name = product?.title
+             else {return}
+             let priceStr = String(price[0].value)
+             let userInfo = ["image" : image, "logo" : "", "price" : priceStr, "name" : name ]
+             NotificationCenter.default.post(name: Notification.Name("newItem"), object: nil, userInfo: userInfo)
+             
+             let alert = UIAlertController(title: "Added to cart", message: "Item added to cart without logo", preferredStyle: .alert)
+             alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default))
+             self.present(alert, animated: true,completion: nil)
+        }
     }
 }
 
