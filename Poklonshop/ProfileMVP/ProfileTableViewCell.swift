@@ -13,6 +13,7 @@ class ProfileTableViewCell: UITableViewCell {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var titleLabel: UILabel!
     var n: Int?
+    var randInt: Int = Int.random(in: 3..<8)
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -37,7 +38,7 @@ extension ProfileTableViewCell: UICollectionViewDelegate {
 }
 extension ProfileTableViewCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        5
+        return randInt
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

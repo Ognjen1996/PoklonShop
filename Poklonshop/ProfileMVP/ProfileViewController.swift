@@ -10,6 +10,7 @@ import UIKit
 class ProfileViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    var randInt: Int = Int.random(in: 3..<8)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +26,7 @@ extension ProfileViewController: UITableViewDelegate {
 }
 extension ProfileViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return randInt
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
