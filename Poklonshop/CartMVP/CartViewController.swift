@@ -7,6 +7,7 @@ class CartViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var totalPrice: UILabel!
     @IBOutlet weak var promoTextField: UITextField!
+    @IBOutlet weak var noItmesImageView: UIImageView!
 
     var selectedLogo: String?
     var cartItems: [ProductInfo]! = [] {
@@ -68,12 +69,21 @@ extension CartViewController: UITableViewDelegate {
 }
 private extension CartViewController {
     func calculatePrice() {
-            var total: Int = 0
-            for product in cartItems {
-                total = product.price + total
-            }
+        var total: Int = 0
+        for product in cartItems {
+            total = product.price + total
+        }
+        if cartItems.count == 0 {
+            noItmesImageView.isHidden = false
+            tableView.isHidden = true
+            totalPrice.text =  "Nema proizvoda u korpi!"
+        }
+        else {
+            noItmesImageView.isHidden = true
+            tableView.isHidden = false
             totalPrice.text =  "Ukupno: " + String(Double(total)) + " RSD \n+ 250 RSD dostava"
         }
+    }
     @objc func removeProduct(_ sender: UIButton) {
         cartItems.remove(at: sender.tag)
         calculatePrice()

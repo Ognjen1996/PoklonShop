@@ -36,8 +36,7 @@ class HomeViewController: UIViewController {
         layout.scrollDirection = .horizontal
         collectionView.collectionViewLayout = layout
         tableView.rowHeight = 300
-        
-        
+    
         // Do any additional setup after loading the view.
     }
 

@@ -16,6 +16,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no drafts" translatesAutoresizingMaskIntoConstraints="NO" id="gaP-fs-0Fh">
+                                <rect key="frame" x="16" y="63" width="358" height="678"/>
+                            </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Zfo-MQ-MgH">
                                 <rect key="frame" x="0.0" y="47" width="390" height="610"/>
                                 <color key="backgroundColor" red="0.9360449314" green="0.88662333459999998" blue="0.89276814869999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -148,16 +151,21 @@
                             <constraint firstItem="XRr-rL-RIw" firstAttribute="top" secondItem="Zfo-MQ-MgH" secondAttribute="bottom" constant="32" id="0KF-i3-LHi"/>
                             <constraint firstItem="XRr-rL-RIw" firstAttribute="trailing" secondItem="Zfo-MQ-MgH" secondAttribute="trailing" id="0wl-un-4L7"/>
                             <constraint firstItem="XRr-rL-RIw" firstAttribute="leading" secondItem="Zfo-MQ-MgH" secondAttribute="leading" id="Bqf-eo-Fii"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="gaP-fs-0Fh" secondAttribute="bottom" constant="69" id="CWL-L6-mny"/>
                             <constraint firstItem="Zfo-MQ-MgH" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Djg-UL-Z3I"/>
+                            <constraint firstItem="gaP-fs-0Fh" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="KTY-zF-S5h"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Bxs-eb-eLR" secondAttribute="trailing" constant="16" id="UUL-i5-ms9"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="gaP-fs-0Fh" secondAttribute="trailing" constant="16" id="UwJ-qj-uUo"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Bxs-eb-eLR" secondAttribute="bottom" constant="30" id="Vvr-YQ-6xq"/>
                             <constraint firstItem="Zfo-MQ-MgH" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="YcC-kG-rVS"/>
                             <constraint firstItem="Bxs-eb-eLR" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="gYH-lq-lFe"/>
+                            <constraint firstItem="gaP-fs-0Fh" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="16" id="hgQ-hC-x93"/>
                             <constraint firstItem="Bxs-eb-eLR" firstAttribute="top" secondItem="XRr-rL-RIw" secondAttribute="bottom" constant="34" id="kp2-pb-ncV"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Zfo-MQ-MgH" secondAttribute="trailing" id="zYK-pk-C5G"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="noItmesImageView" destination="gaP-fs-0Fh" id="cg3-in-muY"/>
                         <outlet property="promoTextField" destination="XRr-rL-RIw" id="Dp4-N6-omA"/>
                         <outlet property="tableView" destination="Zfo-MQ-MgH" id="scm-PB-LYl"/>
                         <outlet property="totalPrice" destination="Bxs-eb-eLR" id="F82-FS-VW5"/>
@@ -165,11 +173,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="56.92307692307692" y="-2.1327014218009479"/>
+            <point key="canvasLocation" x="63" y="-3"/>
         </scene>
     </scenes>
     <resources>
         <image name="beer glass2 1" width="219" height="355"/>
+        <image name="no drafts" width="343" height="432"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

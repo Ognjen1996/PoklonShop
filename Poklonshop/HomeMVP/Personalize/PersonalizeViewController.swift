@@ -16,13 +16,16 @@ class PersonalizeViewController: UIViewController {
     @IBOutlet weak var logoImage: UIImageView!
     @IBOutlet weak var productImage: UIImageView!
     @IBOutlet weak var dragableView: DDImageView!
-
+    @IBOutlet weak var containerView: UIView!
     
+    @IBOutlet weak var yConstraint: NSLayoutConstraint!
+    
+    @IBOutlet weak var constraint: NSLayoutConstraint!
     var product: ProductData?
     var image: String?
     var selected: String?
     
-    let logos: [String] = ["dogmaLogo", "dockerLogo", "lavLogo", "jelenLogo", "hopLogo", "metroLogo", "dogmaLogo2", "samoLogo", "zbirLogo", "saltoLogo", "whiteStoneLogo"]
+    let logos: [String] = ["dogmaLogo", "dockerLogo", "lavLogo", "jelenLogo", "hopLogo", "metroLogo", "dogmaLogo2", "samoLogo", "zbirLogo", "saltoLogo", "whiteStoneLogo", ""]
 
     
     
@@ -102,6 +105,14 @@ extension PersonalizeViewController: DDViewDelegate {
     }
     
     func viewWasDropped(view: UIView, droppedPoint: CGPoint) {
+        
+        debugPrint(droppedPoint, view.frame.minY)
+        if view.frame.minY > 320.0 {
+
+            DDImageView.animateKeyframes(withDuration: 0.25, delay: 0.0, options: UIView.KeyframeAnimationOptions(rawValue: 7), animations: {
+                   self.dragableView.frame.origin.y = 150
+            },completion: nil)
+        }
         
     }
     
